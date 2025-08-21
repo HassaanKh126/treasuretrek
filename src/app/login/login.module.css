@@ -1,0 +1,100 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 400px;
+}
+
+.heading {
+    font-family: "Instrument Serif", sans-serif;
+    font-size: 48px;
+    margin: 0;
+    color: #203430;
+}
+
+.subheading {
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: #203430;
+}
+
+.loginForm {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.loginForm input {
+    padding: 10px 20px;
+    background-color: transparent;
+    border-radius: 15px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    border: 1.5px #20343097 solid;
+    font-family: "Lexend", sans-serif;
+    font-weight: 350;
+    transition: all 0.2s;
+    color: #203430;
+}
+
+.loginForm input:focus-visible {
+    outline: none;
+    border: 1.5px #203430 solid;
+    box-shadow: 2px 2px 2px #203430;
+}
+
+.loginForm button {
+    margin-top: 5px;
+    background-color: #203430;
+    color: #f7fff8;
+    font-size: 1rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 300;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.loginForm button:hover {
+    background-color: #2f4641;
+}
+
+.loginForm button:disabled {
+    background-color: #203430cc;
+    cursor: not-allowed;
+}
+
+.bottomText {
+    text-align: center;
+    font-family: "Lexend", sans-serif;
+    font-weight: 300;
+    font-size: 0.8rem;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.fade-wrapper {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0;
+}

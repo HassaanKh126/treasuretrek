@@ -1,0 +1,462 @@
+.page {
+    height: 100vh;
+}
+
+.navbar {
+    height: 10vh;
+    width: 100%;
+    background-color: #203430;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.logo h1 {
+    padding-left: 30px;
+    color: #f7fff8;
+    font-family: "Instrument Serif", sans-serif;
+    cursor: pointer;
+}
+
+.navlinks {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    padding-right: 30px;
+}
+
+.navlinks a {
+    font-family: "Lexend", sans-serif;
+    font-weight: 300;
+    color: #f7fff8;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.fade-wrapper {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.fade-in {
+    opacity: 1;
+}
+
+.fade-out {
+    opacity: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    padding: 30px;
+    width: 500px;
+}
+
+.container h1 {
+    font-family: "Lexend", sans-serif;
+    font-weight: 500;
+    color: #203430;
+    margin: 0;
+}
+
+.container p {
+    margin: 0;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    color: #203430;
+    margin-bottom: 5px;
+}
+
+.container h2 {
+    margin: 0;
+    font-family: "Lexend", sans-serif;
+    font-weight: 375;
+    color: #203430;
+    margin-bottom: 5px;
+}
+
+
+.addContainer {
+    padding: 20px;
+    background-color: #e7f3e8;
+    border-radius: 20px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.addContainer input {
+    padding: 10px 15px;
+    background-color: transparent;
+    border: 1.5px #2034308a solid;
+    border-radius: 15px;
+    font-family: "Lexend", sans-serif;
+    font-weight: 350;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+
+.addContainer input:focus-visible {
+    outline: none;
+    border: 1.5px #203430 solid;
+}
+
+.coordinates {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.objid {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.pointsdiv {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.objimg {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.placementDiv {
+    margin-top: 15px;
+}
+
+.placementDiv textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 15px;
+    background-color: transparent;
+    border: 1.5px #2034308a solid;
+    border-radius: 15px;
+    font-family: "Lexend", sans-serif;
+    font-weight: 350;
+    font-size: 0.9rem;
+    resize: none;
+    transition: all 0.2s;
+}
+
+.placementDiv textarea:focus-visible {
+    outline: none;
+    border: 1.5px #203430 solid;
+}
+
+.addobjbutton {
+    background-color: #203430;
+    color: #f7fff8;
+    width: 100%;
+    border: none;
+    border-radius: 15px;
+    padding: 15px;
+    margin-top: 10px;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.addobjbutton:hover {
+    background-color: #203430dd;
+}
+
+.addobjbutton:disabled {
+    background-color: #203430cc;
+    cursor: not-allowed;
+}
+
+.currentObjectContainer {
+    position: relative;
+    background-color: #dce6dc;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+.deleteBtn {
+    background-color: #203430;
+    color: #f7fff8;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    border: none;
+    padding: 10px 20px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    font-family: "Lexend", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.deleteBtn:hover {
+    background-color: #203430dd;
+}
+
+.sgbtn {
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    align-self: flex-start;
+    border: none;
+    background-color: #203430;
+    color: #f7fff8;
+    border-radius: 10px;
+    font-family: "Lexend", sans-serif;
+    font-weight: 350;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.sgbtn:hover {
+    background-color: #203430dd;
+}
+
+.sgbtn:disabled {
+    background-color: #203430cc;
+    cursor: not-allowed;
+}
+
+.participantsContainer {
+    padding: 20px;
+    background-color: #e7f3e8;
+    border-radius: 15px;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.participantsContainer h3 {
+    font-size: 1.1rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    margin: 0px;
+    color: #203430;
+}
+
+.participant {
+    background-color: #dce6dc;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    border-radius: 15px;
+}
+
+.participant button {
+    background-color: #203430;
+    border: none;
+    border-radius: 15px;
+    padding: 8px 15px;
+    color: #f7fff8;
+    font-family: "Lexend", sans-serif;
+    font-weight: 350;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.participant button:hover {
+    background-color: #203430dd;
+}
+
+
+.participant p {
+    margin: 0px;
+}
+
+.profilePic {
+    background-color: #203430;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #f7fff8;
+    border-radius: 10px;
+    font-family: "Instrument Serif", sans-serif;
+}
+
+
+.startgameBtn {
+    padding: 15px;
+    margin-top: 15px;
+    border: none;
+    background-color: #203430;
+    color: #f7fff8;
+    border-radius: 15px;
+    font-family: "Lexend", sans-serif;
+    font-weight: 350;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 1.05rem;
+}
+
+.startgameBtn:hover {
+    background-color: #203430dd;
+}
+
+.startgameBtn:disabled {
+    background-color: #203430cc;
+    cursor: not-allowed;
+}
+
+.container2 {
+    display: flex;
+    flex-direction: row;
+    height: 90vh;
+}
+
+.adventureText {
+    font-size: 2.2rem;
+    font-family: "Instrument Serif", sans-serif;
+    color: #203430;
+    margin: 0;
+}
+
+.gameNameText {
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    color: #203430;
+    margin: 0;
+}
+
+.leftSection {
+    background-color: #e7f3e8;
+    padding: 20px;
+    width: 20%;
+}
+
+.divider {
+    border-bottom: 1.5px #203430cc solid;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.findText {
+    font-family: "Lexend", sans-serif;
+    font-weight: 350;
+    font-size: 1rem;
+    color: #203430;
+    margin: 0;
+}
+
+.foundbytext {
+    margin: 0;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    font-family: "Lexend", sans-serif;
+    font-weight: 300;
+    color: #203430;
+}
+
+.objfindContainer {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #dce6dc;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.objfindContainer:hover {
+    background-color: #d5e0d5;
+}
+
+.objfoundContainer {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #cbd5cb;
+    margin-top: 10px;
+}
+
+.foundContainer:disabled {
+    background-color: #4f5f4fcc;
+}
+
+.objFindHead {
+    font-size: 1.1rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    margin: 0px;
+    margin-bottom: 5px;
+    color: #203430;
+    transition: all 0.2s;
+}
+
+.objFindPoints {
+    font-size: 1rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    margin: 0px;
+    color: #203430;
+    transition: all 0.2s;
+}
+
+.rightSection {
+    padding: 30px;
+    width: 80%;
+}
+
+.rightSection h1 {
+    margin: 0;
+    font-family: "Lexend", sans-serif;
+    font-weight: 500;
+    font-size: 1.4rem;
+    color: #203430;
+}
+
+.rightSection h2 {
+    margin: 10px 0px;
+    font-family: "Lexend", sans-serif;
+    font-weight: 450;
+    font-size: 1.4rem;
+    color: #203430;
+}
+
+.rightSection p {
+    margin: 0;
+    font-family: "Lexend", sans-serif;
+    font-weight: 350;
+    font-size: 1rem;
+    color: #203430;
+    width: 60%;
+}
+
+.foundBtn {
+    background-color: #203430;
+    color: #f7fff8;
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: "Lexend", sans-serif;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin-top: 25px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.foundBtn:hover {
+    background-color: #203430dd;
+}
