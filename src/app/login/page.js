@@ -68,6 +68,10 @@ const Login = () => {
                     <button type="submit" disabled={loading}>Login</button>
                 </form>
                 <p className={styles.bottomText} onClick={() => { handleRedirect("register") }}>{`Don't have an account? Sign Up.`}</p>
+                <div style={{marginTop: 10}}>
+                    <p className={styles.bottomText2}>Email: demo1234@gmail.com</p>
+                    <p className={styles.bottomText2}>Password: demo1234</p>
+                </div>
             </div>
         </div >
     )
