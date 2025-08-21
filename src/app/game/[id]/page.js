@@ -28,9 +28,14 @@ const Game = () => {
     useEffect(() => {
         const gameId = id;
 
-        const socket = io(`${process.env.NEXT_PUBLIC_BURL}`);
+        const socket = io(`${process.env.NEXT_PUBLIC_BURL}`, {
+            withCredentials: true, // optional, only if your server expects it
+        });
 
-        socket.emit('joinGame', gameId);
+        socket.on('connect', () => {
+            console.log('✅ Connected to socket:', socket.id);
+            socket.emit('joinGame', gameId);
+        });
 
         socket.on('participants-updated', (updatedParticipants) => {
             setGameParticipants(updatedParticipants);
@@ -46,7 +51,7 @@ const Game = () => {
                 }));
             }, 500);
             if (gamestatus === "completed") {
-                getGameData()
+                getGameData();
             }
         });
 
@@ -54,13 +59,12 @@ const Game = () => {
             setGameObjects(gameObj);
         });
 
-
-
         return () => {
             socket.emit('leaveGame', gameId);
             socket.disconnect();
         };
     }, []);
+
 
     const getToken = () => {
         const token = localStorage.getItem("ttrek_token")
