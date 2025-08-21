@@ -12,6 +12,7 @@ const NewGame = () => {
     const [gamename, setGameName] = useState("")
     const [gm, setGM] = useState("Solo")
     const [error, setError] = useState("")
+    const [loading, setLoading] = useState(false)
 
     const getToken = () => {
         const token = localStorage.getItem("ttrek_token")
@@ -41,22 +42,29 @@ const NewGame = () => {
     }, [username])
 
     const handleCreateGame = async () => {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_BURL}/create-game`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ username, gameName: gamename, gameMode: gm })
-        })
-        const data = await response.json()
-        if (data.error === "Game Name already exists.") {
-            setError("Game Name already exists.")
-            setTimeout(() => {
-                setError("")
-            }, 3000)
-        }
-        if (data.success) {
-            handleRedirect(`game/${data.gid}`)
+        setLoading(true)
+        try {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_BURL}/create-game`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ username, gameName: gamename, gameMode: gm })
+            })
+            const data = await response.json()
+            if (data.error === "Game Name already exists.") {
+                setError("Game Name already exists.")
+                setTimeout(() => {
+                    setError("")
+                }, 3000)
+            }
+            if (data.success) {
+                handleRedirect(`game/${data.gid}`)
+            }
+        } catch (error) {
+            console.log(error)
+        } finally {
+            setLoading(false)
         }
     }
 
@@ -91,7 +99,7 @@ const NewGame = () => {
                     <button className={styles.gmBtn} style={{ backgroundColor: gm === "Solo" ? "#203430" : "#203430cc" }} onClick={() => { handleGMBtn("Solo") }}>Solo vs Solo</button>
                 </div>
 
-                <button className={styles.cgbtn} disabled={gm.trim() === "" || gamename.trim() === ""} onClick={handleCreateGame}>Create Game</button>
+                <button className={styles.cgbtn} disabled={gm.trim() === "" || gamename.trim() === "" || loading} onClick={handleCreateGame}>Create Game</button>
             </div>
         </div>
     )
