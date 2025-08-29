@@ -1,0 +1,30 @@
+/* styles/delete.module.css */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.text {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.email {
+  font-size: 1.5rem;
+  color: #0070f3;
+  text-decoration: underline;
+}
